@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-button slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-button>
+      <ion-title style="text-align:center">
+       Add Student
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-item>
+    <ion-input [(ngModel)]="student.firstName" placeholder="FN"></ion-input>
+  </ion-item>
+<ion-item>
+    <ion-input [(ngModel)]="student.lastName" placeholder="LN"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label>MM DD YY</ion-label>
+      <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"  [(ngModel)]="student.DOB"></ion-datetime>
+    </ion-item>
+<ion-item>
+    <ion-input [(ngModel)]="student.class" placeholder="Class"></ion-input>
+    <ion-list>
+        <ion-item>
+          <ion-label>Select</ion-label>
+          <ion-select [interfaceOptions]="customAlertOptions" interface="alert"  [(ngModel)]="student.class" >
+            <ion-select-option value="1">1</ion-select-option>
+            <ion-select-option value="2">2</ion-select-option>
+            <ion-select-option value="3">3</ion-select-option>
+            <ion-select-option value="4">4</ion-select-option>
+            <ion-select-option value="5">5</ion-select-option>
+            <ion-select-option value="6">6</ion-select-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+  </ion-item>
+<ion-item>
+    <ion-input placeholder="Subject"></ion-input>
+    <ion-list>
+        <ion-item>
+          <ion-label>Subject</ion-label>
+          <ion-select [interfaceOptions]="customAlertOptions" multiple="true" interface="alert" [(ngModel)]="student.subject">
+            <ion-select-option value="Kannada">Kannada</ion-select-option>
+            <ion-select-option value="English">English</ion-select-option>
+            <ion-select-option value="Hindi">Hindi</ion-select-option>
+            <ion-select-option value="Maths">Maths</ion-select-option>
+            <ion-select-option value="Science">Science</ion-select-option>
+            <ion-select-option value="Social">Social</ion-select-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
+  </ion-item>
+<ion-item>
+    <ion-input [(ngModel)]="student.teacher" placeholder="teacher"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-input [(ngModel)]="student.address" placeholder="Ad"></ion-input>
+    </ion-item>
+  <ion-button expand="block" color="success" (click)="addStudent(student)">Add Student</ion-button>
+
+  </ion-content>

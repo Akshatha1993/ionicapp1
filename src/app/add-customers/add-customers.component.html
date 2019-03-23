@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-button slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-button>
+      <ion-title style="text-align:center">
+       Add Customers
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <ion-item position="floating" clear-input="true">
+    <ion-input placeholder="Id" [(ngModel)]="customer.id"></ion-input>
+  </ion-item>
+  <ion-item clear-input="true">
+    <ion-input placeholder="Name" [(ngModel)]="customer.name"></ion-input>
+  </ion-item>
+<ion-item clear-input="true">
+    <ion-input placeholder="Email" [(ngModel)]="customer.email"></ion-input>
+  </ion-item>
+<ion-item clear-input="true">
+    <ion-input placeholder="Address" [(ngModel)]="customer.address"></ion-input>
+  </ion-item>
+<ion-item clear-input="true">
+    <ion-input placeholder="Phone" [(ngModel)]="customer.phone"></ion-input>
+  </ion-item>
+  <ion-button color="primary" (click)="addUpdateCustomers(customer)">Add Cutomer</ion-button>
+  <ion-button color="primary" (click)="deleteAllStudents(customer)">Delete All Cutomer</ion-button>
+</ion-content>
+

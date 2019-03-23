@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-button color="default" slot="start">
+        <ion-icon color="primary" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-title style="text-align:center">
+       List Customers
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content>
+    <!-- <ul>
+      <li *ngFor="let c of customer">
+        {{c.id}} | {{c.name}} | {{c.email}} | {{c.address}} | {{c.phone}}
+        <button>X</button>
+        <button>Select</button>
+      </li>
+    </ul> -->
+    <ion-button (click)="deleteAllStudents(customer)">Delete All</ion-button>
+      <ion-card *ngFor="let c of customers">
+        
+            <ion-item>
+              <ion-icon name="person"></ion-icon>&nbsp;
+                <ion-card-title lines="full">{{c.name}}</ion-card-title>
+            </ion-item>
+            <ion-card-content>
+            <ion-item>
+              <ion-label>
+                  <ion-icon name="mail" ></ion-icon>
+                  <ion-card-subtitle>{{c.email}}</ion-card-subtitle>
+              </ion-label>
+                
+            </ion-item>
+            <ion-item line="none">
+                <ion-icon name="address"></ion-icon>
+              <ion-card-subtitle>{{c.address}}</ion-card-subtitle>
+            </ion-item>
+            <ion-item>
+                <ion-icon name="call"></ion-icon>
+              <ion-card-subtitle>{{c.phone}}</ion-card-subtitle>
+            </ion-item>
+            <ion-button (click)="deleteCustomer(c)">X</ion-button>
+            <ion-button (click)="onSelect(c)">Select</ion-button>
+            </ion-card-content>
+      </ion-card>
+        
+</ion-content>
+

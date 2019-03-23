@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title style="text-align:center">
+      List of Students
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button color="danger" (click)="deleteAllStudents()">Delete All Students</ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-label>Teacher</ion-label>
+      <ion-select [interfaceOptions]="customAlertOptions" interface="alert">
+        <ion-select-option *ngFor="let t of teachers" (click)="onSelect($event)">{{t.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list *ngFor="let s of student">
+    <ion-card>
+      <ion-item>
+        <ion-button (click)="onEdit(s.rollNo)">
+          <ion-icon name="color-filter"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-icon color="primary" name="person"></ion-icon>&nbsp;&nbsp;{{s.firstName}} {{s.lastName}}
+        </ion-card-title>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="clipboard"></ion-icon>&nbsp;&nbsp;{{s.DOB}}
+        </ion-card-subtitle>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="school"></ion-icon>&nbsp;&nbsp;{{s.class}}
+        </ion-card-subtitle>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="book"></ion-icon>&nbsp;&nbsp;{{s.subject}}
+        </ion-card-subtitle>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="person"></ion-icon>&nbsp;&nbsp;{{s.teacher}}
+        </ion-card-subtitle>
+        <ion-card-subtitle>
+          <ion-icon color="primary" name="locate"></ion-icon>&nbsp;&nbsp;{{s.address}}
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-item style="float:right">
+        <ion-button color="default" (click)="deleteStudent(s)">
+          <ion-icon color="danger" name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+</ion-content>
