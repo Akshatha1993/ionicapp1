@@ -13,16 +13,19 @@ export class ListCustomersComponent implements OnInit {
  constructor( private customerService : CustomerService, private router : Router ){}
 
   ngOnInit() {
+    this.customerService.getRemoteCustomers().subscribe((result) => {this.customers = result;});
     this.customers = this.customerService.customers;
   }
   deleteCustomer(c){
-    this.customerService.deleteCustomer(c);
+    this.customerService.deleteRemoteCustomer(c).subscribe(()=>{
+      this.customerService.getRemoteCustomers().subscribe((result) => {this.customers = result;});
+    });
+    this.customerService.getCustomers();
   }
   onSelect(c){
     this.router.navigate(['/edit/'+c.id]);
   }
-  deleteAllStudents(customer){
-    this.customerService.deleteAllCustomers(customer);
+  deleteAllCustomes(customer){
     this.customerService.getCustomers();
   }
 

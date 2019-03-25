@@ -9,6 +9,14 @@ import {Router} from '@angular/router';
 })
 export class AddStudentComponent implements OnInit {
 student = {rollNo:'', firstName:'', lastName:'',DOB:'', class:'', subject:'', teacher:'', address:''}
+teachers:any=[
+  {name:'Rakesh'},
+  {name:'Akshatha'},
+  {name:'Manju'},
+  {name:'Yashu'},
+  {name:'Harsha'},
+];
+
   constructor(private studentService : StudentService, private router : Router) { }
 
   ngOnInit() {

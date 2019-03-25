@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+// import { Observable } from 'rxjs';
 // import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 
 @Injectable({

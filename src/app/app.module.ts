@@ -21,14 +21,15 @@ import { StudentComponent } from './student/student.component';
 import { ListStudentComponent } from './list-student/list-student.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
-import { Camera } from '@ionic-native/camera';
+//import { Camera } from '@ionic-native/camera';
+import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, DashboardComponent, AboutusComponent,
     ListCustomersComponent,AddCustomersComponent, CustomerComponent, EditCustomerComponent, StudentComponent,
     ListStudentComponent,  AddStudentComponent , EditStudentComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, HttpModule, HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,

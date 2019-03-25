@@ -60,17 +60,13 @@ getItems(ev) {
     return this.initializeItems();
   }
 }
-// onSelect(name){
+onSelect(name){
 
-//   for(var i =0; i<this.teachers.length; i++){
-//     console.log(this.teachers);
-//       if(name == this.student.teacher){
-//         return this.student;
-//       }
+  for(var i =0; i<this.student.length; i++){
+      if(name[i]== this.student[i].teacher){
+        return this.student[i];
+      }
 
-//   }
-// }
-onChange($event){
-  console.log($event.target.value);
+  }
 }
 }

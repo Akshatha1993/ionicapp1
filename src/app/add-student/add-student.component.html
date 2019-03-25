@@ -52,7 +52,15 @@
     </ion-list>
   </ion-item>
 <ion-item>
-    <ion-input [(ngModel)]="student.teacher" placeholder="teacher"></ion-input>
+    <ion-input placeholder="Teacher"></ion-input>
+    <ion-list>
+        <ion-item>
+          <ion-label>Teacher</ion-label>
+          <ion-select [interfaceOptions]="customAlertOptions" multiple="true" interface="alert" [(ngModel)]="student.subject">
+            <ion-select-option *ngFor="let t of teachers">{{t.name}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+    </ion-list>
   </ion-item>
   <ion-item>
       <ion-input [(ngModel)]="student.address" placeholder="Ad"></ion-input>

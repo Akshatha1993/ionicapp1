@@ -14,7 +14,7 @@
     <ion-item>
       <ion-label>Teacher</ion-label>
       <ion-select [interfaceOptions]="customAlertOptions" interface="alert">
-        <ion-select-option *ngFor="let t of teachers" (click)="onSelect($event)">{{t.name}}</ion-select-option>
+        <ion-select-option *ngFor="let t of teachers" (click)="onSelect(t.name)">{{t.name}}</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
